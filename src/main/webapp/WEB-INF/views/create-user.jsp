@@ -18,8 +18,8 @@
     </fieldset>
 
     <footer>
-        <a href="${flowExecutionUrl}&_eventId=createUser">Create user</a>
-        <input type="submit" class="btnLogin" value="Login" name="_eventId_submit">
+        <input type="submit" class="btnLogin" value="Create" name="_eventId_submit">
+        <input type="submit" class="btnLogin" value="Cancel" name="_eventId_cancel">
     </footer>
 </form:form>
 </body>

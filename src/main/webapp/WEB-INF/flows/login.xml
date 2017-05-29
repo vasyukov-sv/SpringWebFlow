@@ -9,12 +9,19 @@
     <var name="user" class="ru.javabegin.training.springwebflow.objects.User"/>
     <view-state id="loginForm" view="login" model="user">
         <transition on="submit" to="actionCheckLogin"/>
+        <transition on="createUser" to="createUserFlow"/>
     </view-state>
 
+    <subflow-state id="createUserFlow" subflow="create-user">
+        <input name="user"/>
+        <transition on="userCreated" to="loginForm"/>
+        <transition on="cancelled" to="loginForm"/>
+    </subflow-state>
+
     <action-state id="actionCheckLogin">
-        <evaluate expression="userService.checkUser(user)"/>
-        <transition on="success" to="mainContent"/>
-        <transition on="failed" to="loginForm"/>
+        <evaluate expression="userService.userExist(user)"/>
+        <transition on="yes" to="mainContent"/>
+        <transition on="no" to="loginForm"/>
     </action-state>
 
     <view-state id="mainContent" view="main"/>
