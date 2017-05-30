@@ -1,5 +1,8 @@
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@ taglib prefix="c" uri="http://www.springframework.org/tags" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
+
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -15,6 +18,10 @@
         <form:input path="name"/>
         <form:label path="password"> Password </form:label>
         <form:password path="password"/>
+        
+        <c:if test="${not empty message}">
+            <span style="float: right" class="error">${message}</span>
+        </c:if>
     </fieldset>
 
     <footer>
