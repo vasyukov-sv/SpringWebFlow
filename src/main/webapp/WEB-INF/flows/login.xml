@@ -23,7 +23,7 @@
     </subflow-state>
 
     <action-state id="actionCheckLogin">
-        <evaluate expression="userService.userExist(user)"/>
+        <evaluate expression="userService.userExist(user,flowRequestContext)"/>
         <transition on="yes" to="mainContent"/>
         <transition on="no" to="loginForm">
             <!--suppress SpringElInspection, ELValidationInJSP -->

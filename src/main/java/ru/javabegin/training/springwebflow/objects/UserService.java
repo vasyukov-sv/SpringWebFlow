@@ -1,6 +1,7 @@
 package ru.javabegin.training.springwebflow.objects;
 
 import org.springframework.stereotype.Component;
+import org.springframework.webflow.execution.RequestContext;
 
 import java.util.ArrayList;
 
@@ -17,12 +18,18 @@ public class UserService {
     }
 
     public String createUser(User user) {
-        if (userExist(user)) return "exist";
+        if (userExistName(user)) return "exist";
         users.add(user);
         return "success";
+
     }
 
-    public boolean userExist(User user) {
+    private boolean userExistName(User user) {
         return users.stream().anyMatch(u -> u.getName().toLowerCase().equals(user.getName().toLowerCase()));
+    }
+
+    public boolean userExist(User user, RequestContext context) {
+        System.out.println(context.getFlowScope().asMap());
+        return users.contains(user);
     }
 }
