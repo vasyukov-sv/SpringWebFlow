@@ -12,8 +12,11 @@
 
     <action-state id="createUserAction">
         <evaluate expression="userService.createUser(user)"/>
+        <transition on="exist" to="createUserForm">
+            <!--suppress SpringElInspection, ELValidationInJSP -->
+            <set name="flashScope.message" value="'User already exist!'" type="string"/>
+        </transition>
         <transition on="success" to="userCreated"/>
-        <transition on="exist" to="createUserForm"/>
     </action-state>
 
     <end-state id="userCreated">

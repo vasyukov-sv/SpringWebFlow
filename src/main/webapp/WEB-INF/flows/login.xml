@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--suppress ELValidationInJSP -->
 <flow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xmlns="http://www.springframework.org/schema/webflow"
       xsi:schemaLocation="
@@ -14,7 +15,10 @@
 
     <subflow-state id="createUserFlow" subflow="create-user">
         <input name="user"/>
-        <transition on="userCreated" to="loginForm"/>
+        <transition on="userCreated" to="loginForm">
+            <!--suppress SpringElInspection, ELValidationInJSP -->
+            <set name="flashScope.message" value="'User Created!'" type="string"/>
+        </transition>
         <transition on="cancelled" to="loginForm"/>
     </subflow-state>
 
@@ -22,6 +26,7 @@
         <evaluate expression="userService.userExist(user)"/>
         <transition on="yes" to="mainContent"/>
         <transition on="no" to="loginForm">
+            <!--suppress SpringElInspection, ELValidationInJSP -->
             <set name="flashScope.message" value="'Check user!'" type="string"/>
         </transition>
     </action-state>

@@ -16,11 +16,13 @@ public class UserService {
         users.add(new User("user", "user"));
     }
 
-    public void createUser(User user) {
+    public String createUser(User user) {
+        if (userExist(user)) return "exist";
         users.add(user);
+        return "success";
     }
 
     public boolean userExist(User user) {
-        return users.contains(user);
+        return users.stream().anyMatch(u -> u.getName().toLowerCase().equals(user.getName().toLowerCase()));
     }
 }
