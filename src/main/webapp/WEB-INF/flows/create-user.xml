@@ -13,8 +13,7 @@
     <action-state id="createUserAction">
         <evaluate expression="userService.createUser(user)"/>
         <transition on="exist" to="createUserForm">
-            <!--suppress SpringElInspection, ELValidationInJSP -->
-            <set name="flashScope.message" value="'User already exist!'" type="string"/>
+            <set name="flashScope.message" value="resourceBundle.userAlredyExist" type="string"/>
         </transition>
         <transition on="success" to="userCreated"/>
     </action-state>

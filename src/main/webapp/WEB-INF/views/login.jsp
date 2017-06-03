@@ -14,19 +14,29 @@
 <body>
 <form:form method="POST" modelAttribute="user" class="box login">
     <fieldset class="boxBody">
-        <form:label path="name"> Username </form:label>
+        <span style="float: right">
+            <a href="?lang=en"><spring:message code="en"/></a>
+            <a href="?lang=ru"><spring:message code="ru"/></a>
+        </span>
+
+        <form:label path="name">
+            <spring:message code="username"/>
+        </form:label>
         <form:input path="name"/>
-        <form:label path="password"> Password </form:label>
+
+        <form:label path="password">
+            <spring:message code="password"/>
+        </form:label>
         <form:password path="password"/>
-        
+
         <c:if test="${not empty message}">
             <span style="float: right" class="error">${message}</span>
         </c:if>
     </fieldset>
 
     <footer>
-        <a href="${flowExecutionUrl}&_eventId=createUser">Create user</a>
-        <input type="submit" class="btnLogin" value="Login" name="_eventId_submit">
+        <a href="${flowExecutionUrl}&_eventId=createUser"><spring:message code="create-user"/></a>
+        <input type="submit" class="btnLogin" value="<spring:message code="login"/>" name="_eventId_submit">
     </footer>
 </form:form>
 </body>

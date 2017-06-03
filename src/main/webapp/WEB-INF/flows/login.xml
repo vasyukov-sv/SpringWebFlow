@@ -17,7 +17,7 @@
         <input name="user"/>
         <transition on="userCreated" to="loginForm">
             <!--suppress SpringElInspection, ELValidationInJSP -->
-            <set name="flashScope.message" value="'User Created!'" type="string"/>
+            <set name="flashScope.message" value="resourceBundle.userCreated" type="string"/>
         </transition>
         <transition on="cancelled" to="loginForm"/>
     </subflow-state>
@@ -27,7 +27,7 @@
         <transition on="yes" to="mainContent"/>
         <transition on="no" to="loginForm">
             <!--suppress SpringElInspection, ELValidationInJSP -->
-            <set name="flashScope.message" value="'Check user!'" type="string"/>
+            <set name="flashScope.message" value="resourceBundle.checkUser" type="string"/>
         </transition>
     </action-state>
 
