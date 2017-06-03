@@ -1,9 +1,8 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 
-
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <link href="<c:url value="/resources/css/home.css" />" rel="stylesheet">
@@ -29,13 +28,18 @@
         </form:label>
         <form:password path="password"/>
 
-        <c:if test="${not empty message}">
-            <span style="float: right" class="error">${message}</span>
+        <c:if test="${not empty flowRequestContext.messageContext.allMessages}">
+            <ul class="red_messages">
+                <c:forEach items="${flowRequestContext.messageContext.allMessages}" var="message">
+                    <li>${message.text}</li>
+                </c:forEach>
+            </ul>
         </c:if>
+
     </fieldset>
 
     <footer>
-        <a href="${flowExecutionUrl}&_eventId=createUser"><spring:message code="create-user"/></a>
+        <a href="${flowExecutionUrl}&_eventId=createUser"><spring:message code="createUser"/></a>
         <input type="submit" class="btnLogin" value="<spring:message code="login"/>" name="_eventId_submit">
     </footer>
 </form:form>
