@@ -14,8 +14,7 @@
     <mvc:annotation-driven/>
     <context:component-scan base-package="ru.javabegin.training.springwebflow"/>
 
-    <mvc:resources mapping="/resources/**" location="/resources/"/>
-
+    <mvc:resources mapping="/resources/**" location="/resources/, classpath:/META-INF/web-resources/"/>
 
     <bean class="org.springframework.webflow.mvc.servlet.FlowHandlerMapping">
         <property name="flowRegistry" ref="mainFlowRegistry"/>
