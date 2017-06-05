@@ -10,10 +10,10 @@ import java.io.Serializable;
 
 public class User implements Serializable {
     private static final long serialVersionUID = -8810087547308216409L;
-    @Size(min = 6, message = "{name.size.error}")
+    @Size(min = 4, message = "{name.size.error}")
     private String name;
 
-    @Size(min = 5, max = 10, message = "{password.size.error}")
+    @Size(min = 4, max = 10, message = "{password.size.error}")
     private String password;
 
     public User() {
