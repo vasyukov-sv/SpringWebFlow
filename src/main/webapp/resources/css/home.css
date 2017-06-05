@@ -4,7 +4,7 @@ blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd,
 q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr,
 th, td, article, aside, canvas, details, figcaption, figure, footer,
-header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+header, menu, nav, section, summary, time, mark, audio, video {
     margin: 0;
     padding: 0;
     border: 0;
@@ -13,7 +13,7 @@ header, hgroup, menu, nav, section, summary, time, mark, audio, video {
     vertical-align: baseline;
 }
 
-article, aside, details, figcaption, figure, footer, header, hgroup,
+article, aside, details, figcaption, figure, footer, header,
 menu, nav, section {
     display: block;
 }
@@ -302,36 +302,46 @@ a:hover {
         filter: none !important;
         -ms-filter: none !important;
     }
+
     a, a:visited {
         color: #444 !important;
         text-decoration: underline;
     }
+
     a[href]:after {
         content: " (" attr(href) ")";
     }
+
     abbr[title]:after {
         content: " (" attr(title) ")";
     }
+
     .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after {
         content: "";
     }
+
     pre, blockquote {
         border: 1px solid #999;
         page-break-inside: avoid;
     }
+
     thead {
         display: table-header-group;
     }
+
     tr, img {
         page-break-inside: avoid;
     }
+
     @page {
         margin: 0.5cm;
     }
+
     p, h2, h3 {
         orphans: 3;
         widows: 3;
     }
+
     h2, h3 {
         page-break-after: avoid;
     }

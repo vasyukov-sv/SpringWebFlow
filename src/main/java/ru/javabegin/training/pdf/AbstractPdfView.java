@@ -34,7 +34,7 @@ public abstract class AbstractPdfView extends AbstractView {
         // Apply preferences and build metadata.
         Document document = newDocument();
         PdfWriter writer = newWriter(document, baos);
-        prepareWriter(model, writer, request);
+        prepareWriter(writer);
 //        buildPdfMetadata(model, document, request);
 
         // Build PDF document.
@@ -54,16 +54,13 @@ public abstract class AbstractPdfView extends AbstractView {
         return PdfWriter.getInstance(document, os);
     }
 
-    private void prepareWriter(Map<String, Object> model, PdfWriter writer, HttpServletRequest request) throws DocumentException {
+    private void prepareWriter(PdfWriter writer) throws DocumentException {
 
         writer.setViewerPreferences(getViewerPreferences());
     }
 
     private int getViewerPreferences() {
         return PdfWriter.ALLOW_PRINTING | PdfWriter.PageLayoutSinglePage;
-    }
-
-    private void buildPdfMetadata(Map<String, Object> model, Document document, HttpServletRequest request) {
     }
 
     protected abstract void buildPdfDocument(Map<String, Object> model, Document document, PdfWriter writer, HttpServletRequest request, HttpServletResponse response) throws Exception;
