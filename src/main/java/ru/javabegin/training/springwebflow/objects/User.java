@@ -1,5 +1,6 @@
 package ru.javabegin.training.springwebflow.objects;
 
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 
 /**
@@ -9,9 +10,10 @@ import java.io.Serializable;
 
 public class User implements Serializable {
     private static final long serialVersionUID = -8810087547308216409L;
-    //    @Size(min = 6, message = "{name.size.error}")
+    @Size(min = 6, message = "{name.size.error}")
     private String name;
-    //    @Size(min = 5, max = 10, message = "{password.size.error}")
+
+    @Size(min = 5, max = 10, message = "{password.size.error}")
     private String password;
 
     public User() {

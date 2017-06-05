@@ -14,7 +14,7 @@
         <flow-location-pattern value="*.xml"/>
     </flow-registry>
 
-    <flow-builder-services id="flowBuilder" view-factory-creator="flowViewResolver"/>
+    <flow-builder-services id="flowBuilder" view-factory-creator="flowViewResolver" validator="validator"/>
 
     <beans:bean id="flowViewResolver" class="org.springframework.webflow.mvc.builder.MvcViewFactoryCreator">
         <beans:property name="viewResolvers">
@@ -24,4 +24,5 @@
         </beans:property>
     </beans:bean>
 
+    <beans:bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean"/>
 </beans:beans>
