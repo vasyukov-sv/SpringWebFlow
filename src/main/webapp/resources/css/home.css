@@ -9,7 +9,6 @@ header, menu, nav, section, summary, time, mark, audio, video {
     padding: 0;
     border: 0;
     font-size: 100%;
-    font: inherit;
     vertical-align: baseline;
 }
 
@@ -18,6 +17,7 @@ menu, nav, section {
     display: block;
 }
 
+/*noinspection ALL*/
 .error {
     color: red;
 '
@@ -29,7 +29,6 @@ blockquote, q {
 
 blockquote:before, blockquote:after, q:before, q:after {
     content: '';
-    content: none;
 }
 
 ins {
@@ -108,8 +107,7 @@ ol {
 
 nav ul, nav li {
     margin: 0;
-    list-style: none;
-    list-style-image: none;
+    list-style: none none;
 }
 
 small {
@@ -140,7 +138,6 @@ sub {
 
 pre {
     white-space: pre;
-    white-space: pre-wrap;
     word-wrap: break-word;
     padding: 15px;
 }
@@ -231,6 +228,7 @@ a:hover {
     color: #c00;
 }
 
+/*noinspection ALL*/
 .ir {
     display: block;
     text-indent: -999em;
@@ -240,11 +238,13 @@ a:hover {
     direction: ltr;
 }
 
+/*noinspection ALL*/
 .hidden {
     display: none;
     visibility: hidden;
 }
 
+/*noinspection ALL*/
 .visuallyhidden {
     border: 0;
     clip: rect(0, 0, 0, 0);
@@ -256,6 +256,7 @@ a:hover {
     width: 1px;
 }
 
+/*noinspection ALL*/
 .visuallyhidden.focusable:active, .visuallyhidden.focusable:focus {
     clip: auto;
     height: auto;
@@ -265,10 +266,12 @@ a:hover {
     width: auto;
 }
 
+/*noinspection ALL*/
 .invisible {
     visibility: hidden;
 }
 
+/*noinspection ALL*/
 .clearfix:before, .clearfix:after {
     content: "\0020";
     display: block;
@@ -276,10 +279,12 @@ a:hover {
     overflow: hidden;
 }
 
+/*noinspection ALL*/
 .clearfix:after {
     clear: both;
 }
 
+/*noinspection ALL*/
 .clearfix {
     zoom: 1;
 }
@@ -363,10 +368,10 @@ body {
     background: #eff3f6;
 }
 
+/*noinspection ALL*/
 .box {
     background: #fefefe;
     border: 1px solid #C3D4DB;
-    border-top: 1px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
@@ -379,6 +384,7 @@ body {
     overflow: hidden;
 }
 
+/*noinspection ALL*/
 .box.login {
     height: 260px;
     width: 332px;
@@ -420,6 +426,7 @@ body {
     margin-right: 10px;
 }
 
+/*noinspection ALL*/
 .box input[type=text], .box input[type=password], .txtField, .cjComboBox {
     border: 6px solid #F7F9FA;
     -webkit-border-radius: 3px;
@@ -434,6 +441,7 @@ body {
     display: block;
 }
 
+/*noinspection ALL*/
 .box input[type=text]:focus, .box input[type=password]:focus, .txtField:focus,
 .cjComboBox:focus {
     border: 6px solid #f0f7fc;
@@ -443,22 +451,26 @@ body {
     color: #333;
 }
 
+/*noinspection ALL*/
 .cjComboBox {
     width: 294px;
 }
 
+/*noinspection ALL*/
 .cjComboBox.small {
     padding: 3px 2px 3px 6px;
     width: 100px;
     border-width: 3px !important;
 }
 
+/*noinspection ALL*/
 .txtField.small {
     padding: 3px 6px;
     width: 200px;
     border-width: 3px !important;
 }
 
+/*noinspection ALL*/
 .rLink {
     padding: 0 6px 0 0;
     font-size: 11px;
@@ -488,7 +500,6 @@ body {
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#badff3', EndColorStr='#7acbed')";
     border: 1px solid #7db0cc !important;
     cursor: pointer;
-    padding: 11px 16px;
     font: bold 11px/14px Verdana, Tahomma, Geneva;
     text-shadow: rgba(0, 0, 0, 0.2) 0 1px 0;
     color: #fff;
@@ -502,6 +513,7 @@ body {
     padding: 7px 21px;
 }
 
+/*noinspection ALL*/
 .checkAdmin {
     padding: 11px 16px;
     margin-left: 12px;
@@ -520,6 +532,7 @@ body {
     text-shadow: rgba(0, 0, 0, 0.3) 0 -1px 0;
 }
 
+/*noinspection ALL*/
 footer#main {
     position: fixed;
     left: 0;

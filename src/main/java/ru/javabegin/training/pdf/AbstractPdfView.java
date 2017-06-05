@@ -15,7 +15,7 @@ import java.util.Map;
 /**
  * This class is a work around for working with iText 5.x in Spring. The code here is almost identical to the AbstractPdfView class.
  */
-public abstract class AbstractPdfView extends AbstractView {
+abstract class AbstractPdfView extends AbstractView {
 
     AbstractPdfView() {
         setContentType("application/pdf");
@@ -39,7 +39,7 @@ public abstract class AbstractPdfView extends AbstractView {
 
         // Build PDF document.
         document.open();
-        buildPdfDocument(model, document, writer, request, response);
+        buildPdfDocument(document);
         document.close();
 
         // Flush to HTTP response.
@@ -54,8 +54,7 @@ public abstract class AbstractPdfView extends AbstractView {
         return PdfWriter.getInstance(document, os);
     }
 
-    private void prepareWriter(PdfWriter writer) throws DocumentException {
-
+    private void prepareWriter(PdfWriter writer) {
         writer.setViewerPreferences(getViewerPreferences());
     }
 
@@ -63,5 +62,5 @@ public abstract class AbstractPdfView extends AbstractView {
         return PdfWriter.ALLOW_PRINTING | PdfWriter.PageLayoutSinglePage;
     }
 
-    protected abstract void buildPdfDocument(Map<String, Object> model, Document document, PdfWriter writer, HttpServletRequest request, HttpServletResponse response) throws Exception;
+    protected abstract void buildPdfDocument(Document document) throws Exception;
 }

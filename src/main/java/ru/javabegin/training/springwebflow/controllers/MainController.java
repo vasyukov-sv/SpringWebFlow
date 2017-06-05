@@ -7,13 +7,15 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class MainController {
+    @SuppressWarnings("SameReturnValue")
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String main() {
-        return "redirect:login";
+        return "redirect:login-flow";
     }
 
     @RequestMapping(value = "/downloadPDF", method = RequestMethod.GET)
     public ModelAndView downloadPDF() {
+        //noinspection SpringMVCViewInspection
         return new ModelAndView("pdfView");
     }
 }

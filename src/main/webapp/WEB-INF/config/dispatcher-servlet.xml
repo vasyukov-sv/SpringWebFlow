@@ -14,7 +14,7 @@
     <mvc:annotation-driven/>
     <context:component-scan base-package="ru.javabegin.training.springwebflow"/>
 
-    <mvc:resources mapping="/resources/**" location="/resources/, classpath:/META-INF/web-resources/"/>
+    <mvc:resources mapping="/resources/**" location="/resources/"/>
 
     <bean class="org.springframework.webflow.mvc.servlet.FlowHandlerMapping">
         <property name="flowRegistry" ref="mainFlowRegistry"/>
@@ -26,7 +26,7 @@
     </bean>
 
     <bean id="viewPDFResolver" class="org.springframework.web.servlet.view.ResourceBundleViewResolver">
-        <property name="order" value="0"/>
+        <property name="order" value="1"/>
         <property name="basename" value="views"/>
     </bean>
 
@@ -38,7 +38,7 @@
           class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="WEB-INF/views/"/>
         <property name="suffix" value=".jsp"/>
-        <property name="order" value="1"/>
+        <property name="order" value="0"/>
     </bean>
 
     <bean id="messageSource"
@@ -63,5 +63,4 @@
             <ref bean="localeChangeInterceptor"/>
         </mvc:interceptor>
     </mvc:interceptors>
-
 </beans>

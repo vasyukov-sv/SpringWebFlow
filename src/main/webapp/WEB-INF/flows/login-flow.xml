@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--suppress ELValidationInJSP -->
+
 <flow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xmlns="http://www.springframework.org/schema/webflow"
       xsi:schemaLocation="
         http://www.springframework.org/schema/webflow
         http://www.springframework.org/schema/webflow/spring-webflow-2.4.xsd"
-      start-state="loginForm" parent="loginparent">
+      start-state="loginForm" parent="loginparent-flow">
 
     <view-state id="loginForm" view="login" model="user">
         <transition on="submit" to="actionCheckLogin"/>
         <transition on="createUser" to="createUserFlow"/>
     </view-state>
 
-    <subflow-state id="createUserFlow" subflow="createuser">
+    <subflow-state id="createUserFlow" subflow="createuser-flow">
         <input name="user"/>
         <transition on="userCreated" to="loginForm"/>
         <transition on="cancelled" to="loginForm"/>
