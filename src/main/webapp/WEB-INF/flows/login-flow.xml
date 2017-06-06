@@ -9,7 +9,7 @@
 
     <view-state id="loginForm" view="login" model="user">
         <transition on="submit" to="actionCheckLogin"/>
-        <transition on="createUser" to="createUserFlow"/>
+        <transition on="createUser" to="createUserFlow" validate="false"/>
     </view-state>
 
     <subflow-state id="createUserFlow" subflow="createuser-flow">

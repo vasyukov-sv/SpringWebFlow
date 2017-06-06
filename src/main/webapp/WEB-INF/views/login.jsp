@@ -26,7 +26,7 @@
             <a href="?lang=en"><spring:message code="en"/></a>
             <a href="?lang=ru"><spring:message code="ru"/></a>
         </span>
-
+        <h4><spring:message code="defaultUserPass"/></h4>
         <form:label path="name">
             <spring:message code="username"/>
         </form:label>
