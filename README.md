@@ -1,2 +1,2 @@
 # SpringWebFlow
-Example Use SpringWebFlow
+Example Use SpringWebFlow. Run it on GlassFish.
